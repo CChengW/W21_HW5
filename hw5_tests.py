@@ -1,5 +1,5 @@
 #########################################
-##### Name: Chengcheng Wang         #####
+##### Name: Chengcheng Wang         #####
 ##### Uniqname:chchwang@umich.edu   #####
 #########################################
 import unittest
@@ -147,8 +147,9 @@ class TestCard(unittest.TestCase):
         num1=len(deck7.cards)
         deck7.replace_card(cardi)
         num2=len(deck7.cards)
-        self.assertEqual(num1,num2-1)
-        return num1, num2-1
+        self.assertEqual(num1+1,num2,52)
+        return num1+1, num2, 52
+        
     
     def test_q8(self):
         '''
@@ -166,11 +167,12 @@ class TestCard(unittest.TestCase):
         card8=hw5_cards.Card()
         deck8=hw5_cards.Deck()
         num1=len(deck8.cards)
-        if card8 in deck8.cards:
+        for card8 in deck8.cards:
             deck8.replace_card(card8)
             num2=len(deck8.cards)
             self.assertEqual(num1,num2)
             return num1, num2 
+        
          
 
 
